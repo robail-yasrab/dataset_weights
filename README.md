@@ -20,16 +20,16 @@ class_weights = torch.FloatTensor(weights).cuda()       # add or remove cuda() i
 ### Loss Function  
 Change Cross Entropy Loss function definition: 
 
-'''
+```
 loss = torch.nn.CrossEntropyLoss(weight=class_weights)
-'''
+```
 
 
 
 
 
 
-## Reference from RootNav 2.0 
+# Reference from RootNav 2.0 
 It is common in root images that the number of background pixels heavily outweigh the foreground. Calculating a loss over an unbalanced dataset such as this is likely to cause a bias towards background pixels, causing error and undersegmentation of the foreground. We apply a class-balancing approach to the standard cross-entropy loss, based on median frequency balancing. Weights are assigned to each class inversely proportional to the median frequency in which that class appears throughout the entire training set. This reduces the weight for classes that appear more often, in this case background, and increases the weight of foreground classes such as first-order roots [[1]](#1). 
 
 
