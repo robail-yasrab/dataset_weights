@@ -9,7 +9,7 @@ Download and edit for your ground truth (mask) directory.
 ```
 git clone https://github.com/robail-yasrab/dataset_weights.git
 cd dataset_weights
-python weight.py     #change input address to your ground truth directory 
+python weight.py     #change input address to your training ground truth (GT/Mask) directory only. (Note: NOT Input images)
 ```
 ### Code for Training 
 add these weights in your training code. 
