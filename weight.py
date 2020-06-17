@@ -15,11 +15,11 @@ parser.add_argument('--dir', type=str, help='Path to the folder containing the i
 args = parser.parse_args()
 
 if args.dir:
-    cwd = './trainannot/' # dataset ground truth (GT) directory  
+    cwd = './trainannot/'                      # dataset ground truth (GT) directory  
     if not args.dir.endswith('/'): cwd = cwd + '/'
 else:
     cwd = os.getcwd() + '/'
-cwd = './trainannot/' # dataset ground truth (GT) directory  
+cwd = './trainannot/'                          # dataset ground truth (GT) directory  
 image_names = listdir(cwd)
 # Keep only images and append image_names to directory
 image_list = [cwd + s for s in image_names if s.lower().endswith(('.png', '.jpg', '.jpeg'))] #can add prefered image type
